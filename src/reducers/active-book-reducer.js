@@ -1,5 +1,10 @@
 import { createReducer } from 'Utils/create-reducer';
-import { book_handler } from './handlers/books';
+import { BOOK_SELECTED } from 'Constants/book-types';
 
-export const ActiveBook = createReducer([], book_handler);
+const book_handler = {
+  [BOOK_SELECTED]: (state, action) => {
+     return action.payload;
+  } 
+}
 
+export default createReducer(null, book_handler);
